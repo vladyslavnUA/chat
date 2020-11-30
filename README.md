@@ -28,7 +28,7 @@ node app.js
 ```
 
 ## Issues
-If any issues appear, please open a new ticket. <br>
+If any issues appear, please open a <a href="https://github.com/vladyslavnUA/chat/issues/new">new ticket</a>. <br>
 Otherwise, it is usually an update in a module <br>
 being used so check which one needs to be updated <br>
 and update with 
