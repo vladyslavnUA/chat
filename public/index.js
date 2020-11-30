@@ -25,21 +25,6 @@ $(document).ready(()=>{
         $('.main-container').css('display', 'flex');
       }
     });
-
-    $('#logout-button').click((e)=>{
-      socket.emit('user has left');
-
-      $('.main-container').css('display', 'none');
-      
-      let body = $('body')
-      body.append(
-        "<form class='username-form'><input id='username-input' placeholder='Username'></input><button id='create-user-btn'>Join Chat</button></form>"
-      )
-      
-    });
-    
-  
-    
   
     //socket listeners
     socket.on('new user', (username) => {
