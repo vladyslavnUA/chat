@@ -24,7 +24,8 @@ app.use('/public', express.static('public'))
 app.get('/', (req, res) => {
   res.render('index.handlebars');
 });
+port = process.env.PORT || 3000
 
-server.listen('5000', () => {
+server.listen(port, "0.0.0.0", () => {
   console.log('Server listening on Port 3000');
 });
