@@ -9,6 +9,9 @@
 - jQuery
 
 ## Demo
+
+Live Demo: [https://plackchat.herokuapp.com/](https://plackchat.herokuapp.com/)
+
 ![chat app demo](https://i.imgur.com/3shF9MU.png)
 
 ## Usage
