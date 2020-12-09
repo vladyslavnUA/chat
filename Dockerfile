@@ -11,7 +11,7 @@ WORKDIR /app
 COPY ./package.json /app
 
 # install app dependencies
-RUN npm i
+RUN npm i && npm cache clean --force
 
 # copy project 
 COPY ./ /app

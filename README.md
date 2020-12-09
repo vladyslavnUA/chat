@@ -28,6 +28,10 @@ npm i || npm install
 
 node app.js
 
+# Or, a one-line Docker command
+
+docker run makechat
+
 ```
 
 ## Issues
