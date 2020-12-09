@@ -34,16 +34,21 @@ $(document).ready(()=>{
     
     
     socket.on('new message', (data) => {
-        //Only append the message if the user is currently in that channel
-        let currentChannel = $('.channel-current').text();
-        if(currentChannel == data.channel){
-        $('.message-container').append(`
-            <div class="message">
-            <p class="message-user">${data.sender}: </p>
-            <p class="message-text">${data.message}</p>
-            </div>
-        `);
-        }
+      //Only append the message if the user is currently in that channel
+      let currentChannel = $('.channel-current').text();
+
+      if(currentChannel == data.channel){
+      $('.message-container').append(`
+          <div class="message">
+          <p class="message-user">${data.sender}: </p>
+          <p class="message-text">${data.message}</p>
+          </div>
+      `);
+      } else if (currentChannel.contains('www' || 'https' || 'http' || '.com' )) {
+          var urlmes = data.message;
+          const urlTag = `<a href="${urlmes} target="_blank>${urlmes}</a>"`;
+          console.log(urlTag, '#############');
+      };
     })
 
     socket.on('get online users', (onlineUsers) => {
