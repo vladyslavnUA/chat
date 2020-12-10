@@ -30,6 +30,7 @@ node app.js
 
 # Or, a one-line Docker command
 
+docker build --tag makechat .
 docker run makechat
 
 ```

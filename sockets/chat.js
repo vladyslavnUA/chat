@@ -12,14 +12,15 @@ module.exports = (io, socket, onlineUsers, channels) => {
     })
   
     socket.on('new message', (data) => {
-        //Save the new message to the channel.
+        // save the new message to the channel.
         channels[data.channel].push({sender : data.sender, message : data.message});
-        //Emit only to sockets that are in that channel room.
+        // console.log(message);
+        // rmit only to sockets that are in that channel room.
         io.to(data.channel).emit('new message', data);
     });
 
     socket.on('get online users', () => {
-        //Send over the onlineUsers
+        // send over the onlineUsers
         socket.emit('get online users', onlineUsers);
     })
 

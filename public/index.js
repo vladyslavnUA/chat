@@ -37,18 +37,44 @@ $(document).ready(()=>{
       //Only append the message if the user is currently in that channel
       let currentChannel = $('.channel-current').text();
 
-      if(currentChannel == data.channel){
-      $('.message-container').append(`
+      var imglink = ''
+
+      if(data.message.includes('.jpg')) {
+        const imglink = data.message;
+        $('.message-container').append(`
           <div class="message">
           <p class="message-user">${data.sender}: </p>
-          <p class="message-text">${data.message}</p>
+          <img src="${imglink}" class="message-text" style="width: 300px;"></img>
           </div>
       `);
-      } else if (currentChannel.contains('www' || 'https' || 'http' || '.com' )) {
-          var urlmes = data.message;
-          const urlTag = `<a href="${urlmes} target="_blank>${urlmes}</a>"`;
-          console.log(urlTag, '#############');
-      };
+      }
+      else if (data.message.includes('www')) {
+        const alink = data.message;
+        $('.message-container').append(`
+          <div class="message">
+            <p class="message-user">${data.sender}: </p>
+            <a href="${alink}" target="_blank">${alink}</a>
+          </div>
+      `);
+        // const urlTag = `<a href="${urlmes}" target="_blank">${urlmes}</a>`;
+      }
+      // array 
+      // loop 
+      else {
+        if(currentChannel == data.channel){
+        $('.message-container').append(`
+            <di
+            v class="message">
+            <p class="message-user">${data.sender}: </p>
+            <p class="message-text">${data.message}</p>
+            </div>
+        `);
+        } else if (currentChannel.contains('www' || 'https' || 'http' || '.com' )) {
+            var urlmes = data.message;
+            const urlTag = `<a href="${urlmes} target="_blank>${urlmes}</a>"`;
+            console.log(urlTag, '#############');
+        };
+      }
     })
 
     socket.on('get online users', (onlineUsers) => {
@@ -114,5 +140,11 @@ $(document).ready(()=>{
           });
           $('#chat-input').val("");
         }
+        // var imgt = ['.jpg'];
+
+        // if (message.includes('.jpg')) {
+          
+        //   console.log('FOUND');
+        // };
     });
 })
