@@ -4,7 +4,6 @@
 ![Website](https://img.shields.io/website?down_message=offline&up_message=up&url=https%3A%2F%2Fplackchat.herokuapp.com%2F)
 ![GitHub language count](https://img.shields.io/github/languages/count/vladyslavnUA/chat)
 ![GitHub top language](https://img.shields.io/github/languages/top/vladyslavnUA/chat)
-![GitHub](https://img.shields.io/github/license/vladyslavnUA/chat)
 
 > A very minimalistic clone of Slack using Socket.io
 
