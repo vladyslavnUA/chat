@@ -32,15 +32,6 @@ npm i || npm install
 # run the project
 
 node app.js
-
-# Or, a one-line Docker command
-
-docker build --tag makechat .
-<<<<<<< HEAD
-docker run makechat
-=======
->>>>>>> 5c6235b149f581477cc8a219a0295c2882c6eb10
-
 ```
 
 ## Issues
